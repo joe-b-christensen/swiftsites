@@ -1,0 +1,15 @@
+SwiftSites (swiftsites.c, gzload.c, gzload.h) is a rewrite derived from snp-sites v2.5.1 (GPL-3.0-or-later; Genome
+Research Ltd, Wellcome Sanger Institute; Page et al. 2016). The derived work stays GPL-3.0-or-later. Its input parser
+reproduces the behaviour of kseq.h (Attractive Chaos / Heng Li, MIT licence) as used by snp-sites; the kseq.h notice
+is reproduced in ../LICENSE.
+
+Vendored code:
+- libdeflate v1.26 (https://github.com/ebiggers/libdeflate, tag v1.26, commit 92e6a0d), MIT licence
+  (see libdeflate/COPYING). Only the decompression sources are included: deflate_decompress.c,
+  gzip_decompress.c, utils.c, crc32.c, x86/cpu_features.c and their headers. MIT is GPL-compatible.
+  Modified for SwiftSites (marked "SwiftSites" in the source): deflate_decompress.c (four fields in struct
+  libdeflate_decompressor, their defaults, and two accessor functions libdeflate_sw_set/libdeflate_sw_stopped) and
+  lib/decompress_template.h (start decoding at a bit offset, accept a preset window before the output buffer, stop
+  at a given block boundary). With the default field values the decoder behaves exactly as upstream.
+
+Runtime dependencies: libc, zlib (fallback gzip path), libgomp (OpenMP).

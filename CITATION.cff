@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: "If you use swiftsites, please cite it as below, and also cite snp-sites, from which it derives."
+title: "swiftsites: a byte-identical drop-in replacement for snp-sites"
+type: software
+version: 1.0.0
+date-released: 2026-11-04
+license: GPL-3.0-or-later
+repository-code: "https://github.com/joe-b-christensen/swiftsites"
+authors:
+  - family-names: Christensen
+    given-names: Joe
+    orcid: "https://orcid.org/0009-0007-0908-1299"
+    email: joechristensen@clin.au.dk
+    affiliation: "Translational Neuropsychiatry Unit (TNU), Department of Clinical Medicine, Aarhus University, Denmark"
+keywords:
+  - snp-sites
+  - SNP
+  - multiple sequence alignment
+  - bacterial genomics
+  - phylogenetics
+  - VCF
+  - performance
+abstract: >-
+  swiftsites reduces a whole-genome multiple sequence alignment to its variable columns with output byte-identical to
+  snp-sites 2.5.1 for every mode (multi-FASTA, VCF, PHYLIP, pseudo-reference, pure-ACGT, monomorphic and constant-site
+  output; plain, gzipped and FASTQ input). On four real benchmark sets it was 43x faster than snp-sites with two threads
+  and 26x with one, and on seven real inputs 5.0x faster than SNPick writing variable-site FASTA (geometric means, cloud
+  VM with 2 vCPUs).
+references:
+  - type: article
+    title: "SNP-sites: rapid efficient extraction of SNPs from multi-FASTA alignments"
+    authors:
+      - family-names: Page
+        given-names: Andrew J.
+      - family-names: Taylor
+        given-names: Ben
+      - family-names: Delaney
+        given-names: Aidan J.
+      - family-names: Soares
+        given-names: Jorge
+      - family-names: Seemann
+        given-names: Torsten
+      - family-names: Keane
+        given-names: Jacqueline A.
+      - family-names: Harris
+        given-names: Simon R.
+    journal: "Microbial Genomics"
+    volume: 2
+    issue: "4"
+    year: 2016
+    doi: "10.1099/mgen.0.000056"
